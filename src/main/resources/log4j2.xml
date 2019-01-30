@@ -2,9 +2,12 @@
 <Configuration status="WARN">
     <Appenders>
         <Console name="Console" target="SYSTEM_OUT">
-            <!-- Default Value of the "pattern" Attribute -->
+            <!-- Some Values of the "pattern" Attribute -->
             <!-- ============================================================ -->
+            <!-- Default -->
             <!-- %d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n -->
+            <!-- Option 1 -->
+            <!-- %logger{1}.%message%n -->
             <!-- ============================================================ -->
             <PatternLayout pattern="%logger{1}.%message%n" />
         </Console>
