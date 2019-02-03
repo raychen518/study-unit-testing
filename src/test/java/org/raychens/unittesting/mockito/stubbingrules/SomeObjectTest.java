@@ -63,13 +63,10 @@ public class SomeObjectTest {
 
     /**
      * <pre>
-     * This test method tests the rule - Stubbing Can Be Overridden.
-     * </pre>
+     * This test method tests the stubbing rule - Stubbing Can Be Overridden.
      *
-     * <pre>
-     * A common stubbing can be done in the @Before method as a test fixture for
-     * some test methods and one test method can override that common stubbing
-     * when necessary.
+     * A common stubbing can be done in the @Before method as a test fixture for some test methods
+     * and one test method can override that common stubbing when necessary.
      * </pre>
      */
     @Test
@@ -81,16 +78,13 @@ public class SomeObjectTest {
 
     /**
      * <pre>
-     * This test method tests the rule - Stubbed Method Invocation Always Returns the Stubbed Value.
-     * </pre>
+     * This test method tests the stubbing rule - Stubbed Method Invocation Always Returns the Stubbed Value.
      *
-     * <pre>
-     * Once stubbed, invoking the method always returns the stubbed value before
-     * the stubbing is changed.
+     * Once stubbed, a method invocation always returns the stubbed value unless the stubbing is changed.
      * </pre>
      */
     @Test
-    public void test_102_stubbedMethodInvocationAlwaysReturnStubbedValue() {
+    public void test_102_stubbedMethodInvocationAlwaysReturnsTheStubbedValue() {
         LOGGER.info(someObject.doSomething());
         LOGGER.info(someObject.doSomething());
         LOGGER.info(someObject.doSomething());
@@ -98,11 +92,9 @@ public class SomeObjectTest {
 
     /**
      * <pre>
-     * This test method tests the rule - Last Stubbing Is More Important.
-     * </pre>
+     * This test method tests the stubbing rule - Last Stubbing Is More Important.
      *
-     * <pre>
-     * It is always the last stubbing that takes effect for a method invocation.
+     * For a method invocation, it is always the last stubbing that takes effect.
      * </pre>
      */
     @Test
