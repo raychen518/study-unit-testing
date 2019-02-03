@@ -1,8 +1,8 @@
 package org.raychens.unittesting.mockito.argumentmatchers;
 
-import static org.raychens.unittesting.commons.logging.MethodLogMessage.methodBegin;
-import static org.raychens.unittesting.commons.logging.MethodLogMessage.methodEnd;
-import static org.raychens.unittesting.commons.logging.MethodLogMessage.methodIntermediate;
+import static org.raychens.unittesting.commons.MethodLogMessage.methodBegin;
+import static org.raychens.unittesting.commons.MethodLogMessage.methodEnd;
+import static org.raychens.unittesting.commons.MethodLogMessage.methodIntermediate;
 
 import java.util.List;
 import java.util.Map;

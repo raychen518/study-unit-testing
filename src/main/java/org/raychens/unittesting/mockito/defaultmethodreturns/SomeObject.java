@@ -22,7 +22,7 @@ public class SomeObject {
     private double doubleValue;
     private boolean booleanValue;
     private char charValue;
-
+ 
     private Integer integerWrapper;
     private Double doubleWrapper;
     private Boolean booleanWrapper;

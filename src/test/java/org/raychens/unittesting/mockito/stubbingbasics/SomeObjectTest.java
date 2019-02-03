@@ -39,12 +39,15 @@ public class SomeObjectTest {
     }
 
     /**
-     * <pre>
+     * <p>
      * This test method tests the rule - Stubbing Can Be Overridden.
+     * </p>
      *
-     * A common stubbing can be done in the @Before method as a test fixture for some test methods
-     * and one test method can override that common stubbing when necessary.
-     * </pre>
+     * <p>
+     * A common stubbing can be done in the @Before method as a test fixture for
+     * some test methods and one test method can override that common stubbing
+     * when necessary.
+     * </p>
      */
     @Test
     public void test_101_stubbingCanBeOverridden() {
@@ -54,11 +57,15 @@ public class SomeObjectTest {
     }
 
     /**
-     * <pre>
-     * This test method tests the rule - Stubbed Method Invocation Always Returns the Stubbed Value.
+     * <p>
+     * This test method tests the rule - Stubbed Method Invocation Always
+     * Returns the Stubbed Value.
+     * </p>
      *
-     * Once stubbed, invoking the method always returns the stubbed value before the stubbing is changed.
-     * </pre>
+     * <p>
+     * Once stubbed, invoking the method always returns the stubbed value before
+     * the stubbing is changed.
+     * </p>
      */
     @Test
     public void test_102_stubbedMethodInvocationAlwaysReturnStubbedValue() {
@@ -68,11 +75,13 @@ public class SomeObjectTest {
     }
 
     /**
-     * <pre>
+     * <p>
      * This test method tests the rule - Last Stubbing Is More Important.
+     * </p>
      *
+     * <p>
      * It is always the last stubbing that takes effect for a method invocation.
-     * </pre>
+     * </p>
      */
     @Test
     public void test_103_lastStubbingIsMoreImportant() {
