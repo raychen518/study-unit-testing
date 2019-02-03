@@ -1,4 +1,4 @@
-package org.raychens.unittesting.commons.logging;
+package org.raychens.unittesting.commons;
 
 import org.apache.commons.lang3.StringUtils;
 
@@ -23,6 +23,11 @@ public class MethodLogMessage {
      * Text Constant - END
      */
     private static final String TEXT_END = "END";
+
+    /**
+     * Text Constant - PROCESSING
+     */
+    private static final String TEXT_PROCESSING = "PROCESSING...";
 
     /**
      * Returns the Method Begin log message for the specified method.
@@ -83,6 +88,18 @@ public class MethodLogMessage {
         }
 
         return resultBuilder.toString();
+    }
+
+    /**
+     * Returns the Method Processing log message for the specified method.
+     *
+     * @param methodName
+     *            Name of the specified method.
+     * @return the Method Processing log message for the specified method.
+     */
+    public static String methodProcessing(String methodName) {
+        return new StringBuilder(methodName).append(TEXT_COLON).append(StringUtils.SPACE).append(TEXT_PROCESSING)
+                .toString();
     }
 
     /**

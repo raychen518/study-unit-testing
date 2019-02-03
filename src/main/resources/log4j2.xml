@@ -2,14 +2,17 @@
 <Configuration status="WARN">
     <Appenders>
         <Console name="Console" target="SYSTEM_OUT">
-            <!-- Some Values of the "pattern" Attribute -->
+            <!-- Some Patterns (Values for the "pattern" Attribute) -->
+            <!-- Reference: https://logging.apache.org/log4j/2.x/manual/layouts.html#Patterns -->
             <!-- ============================================================ -->
-            <!-- Default -->
+            <!-- Default Pattern -->
             <!-- %d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n -->
-            <!-- Option 1 -->
-            <!-- %logger{1}.%message%n -->
+            <!-- Default Pattern (Full Form) -->
+            <!-- %date{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %message%n -->
+            <!-- Pattern #1 -->
+            <!-- %logger{1}: %message%n -->
             <!-- ============================================================ -->
-            <PatternLayout pattern="%logger{1}.%message%n" />
+            <PatternLayout pattern="%logger{1}: %message%n" />
         </Console>
     </Appenders>
     <Loggers>
