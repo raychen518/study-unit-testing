@@ -1,4 +1,4 @@
-package org.raychens.unittesting.mockito.stubbingbasics;
+package org.raychens.unittesting.mockito.stubbingrules;
 
 import static org.raychens.unittesting.commons.DataGenerator.generateString;
 import static org.raychens.unittesting.commons.MethodLogMessage.methodBegin;

@@ -1,4 +1,4 @@
-package org.raychens.unittesting.mockito.stubbingbasics;
+package org.raychens.unittesting.mockito.stubbingrules;
 
 import static org.junit.runners.MethodSorters.NAME_ASCENDING;
 import static org.mockito.Mockito.doCallRealMethod;
@@ -12,10 +12,33 @@ import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.mockito.Spy;
 
+/**
+ * <pre>
+ * This test class tests the following stubbing rules.
+ * - Stubbing Can Be Overridden
+ * - Stubbed Method Invocation Always Returns the Stubbed Value
+ * - Last Stubbing Is More Important
+ * </pre>
+ */
 @FixMethodOrder(NAME_ASCENDING)
 public class SomeObjectTest {
 
     private static final Logger LOGGER = LogManager.getLogger();
+
+    /**
+     * Constant: Text - ABC
+     */
+    private static final String TEXT_ABC = "abc";
+
+    /**
+     * Constant: Text - DEF
+     */
+    private static final String TEXT_DEF = "def";
+
+    /**
+     * Constant: Text - GHI
+     */
+    private static final String TEXT_GHI = "ghi";
 
     @Spy
     SomeObject someObject = new SomeObject();
@@ -23,7 +46,7 @@ public class SomeObjectTest {
     @Before
     public void setUp() {
         initMocks(this);
-        doReturn("abc").when(someObject).doSomething();
+        doReturn(TEXT_ABC).when(someObject).doSomething();
     }
 
     @Test
@@ -39,33 +62,32 @@ public class SomeObjectTest {
     }
 
     /**
-     * <p>
+     * <pre>
      * This test method tests the rule - Stubbing Can Be Overridden.
-     * </p>
+     * </pre>
      *
-     * <p>
+     * <pre>
      * A common stubbing can be done in the @Before method as a test fixture for
      * some test methods and one test method can override that common stubbing
      * when necessary.
-     * </p>
+     * </pre>
      */
     @Test
     public void test_101_stubbingCanBeOverridden() {
-        doReturn("def").when(someObject).doSomething();
+        doReturn(TEXT_DEF).when(someObject).doSomething();
 
         LOGGER.info(someObject.doSomething());
     }
 
     /**
-     * <p>
-     * This test method tests the rule - Stubbed Method Invocation Always
-     * Returns the Stubbed Value.
-     * </p>
+     * <pre>
+     * This test method tests the rule - Stubbed Method Invocation Always Returns the Stubbed Value.
+     * </pre>
      *
-     * <p>
+     * <pre>
      * Once stubbed, invoking the method always returns the stubbed value before
      * the stubbing is changed.
-     * </p>
+     * </pre>
      */
     @Test
     public void test_102_stubbedMethodInvocationAlwaysReturnStubbedValue() {
@@ -75,25 +97,22 @@ public class SomeObjectTest {
     }
 
     /**
-     * <p>
+     * <pre>
      * This test method tests the rule - Last Stubbing Is More Important.
-     * </p>
+     * </pre>
      *
-     * <p>
+     * <pre>
      * It is always the last stubbing that takes effect for a method invocation.
-     * </p>
+     * </pre>
      */
     @Test
     public void test_103_lastStubbingIsMoreImportant() {
         LOGGER.info(someObject.doSomething());
 
-        doReturn("def").when(someObject).doSomething();
+        doReturn(TEXT_DEF).when(someObject).doSomething();
         LOGGER.info(someObject.doSomething());
 
-        doReturn("ghi").when(someObject).doSomething();
-        LOGGER.info(someObject.doSomething());
-
-        doReturn("jkl").when(someObject).doSomething();
+        doReturn(TEXT_GHI).when(someObject).doSomething();
         LOGGER.info(someObject.doSomething());
         LOGGER.info(someObject.doSomething());
         LOGGER.info(someObject.doSomething());
