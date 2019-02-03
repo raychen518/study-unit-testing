@@ -1,4 +1,4 @@
-package xxx.yyy.zzz.b;
+package aaa.bbb.ccc.y;
 
 import static org.mockito.Mockito.mock;
 
@@ -15,20 +15,24 @@ public class ChildTest2 {
         Object object = mock(Object.class);
 
         // The invocation of the protected superclass method -
-        // xxx.yyy.zzz.a.Parent.doSomething(Object) cannot be stubbed here since
-        // that method is invisible here.
+        // aaa.bbb.ccc.x.Parent.doSomething(Object) cannot be stubbed here
+        // because that method is invisible here and Mockito doesn't support
+        // stubbing the invocations of invisible methods.
         // ...
 
         // The invocation of the protected superclass method -
-        // xxx.yyy.zzz.a.Parent.doSomethingWithReturn(String, int, boolean)
-        // cannot be stubbed here since that method is invisible here.
+        // aaa.bbb.ccc.x.Parent.doSomethingWithReturn(String, int, boolean)
+        // cannot be stubbed here because that method is invisible here and
+        // Mockito doesn't support stubbing the invocations of invisible
+        // methods.
         // ...
 
         // Execute the method to test.
         child.doSomething(object);
 
         // The invocations of those 2 protected superclass methods cannot be
-        // verified here since those 2 methods are invisible here.
+        // verified here because those 2 methods are invisible here and Mockito
+        // doesn't support verifying the invocations of invisible methods.
         // ...
     }
 
